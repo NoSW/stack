@@ -206,6 +206,7 @@ And yet 可是，然而
 
 43. alleviate 减轻，缓和
 
+
 ---
 
 - point (.), plus (+), dash (-), slash (/), asterisk (*), percent (%), 
