@@ -4,7 +4,6 @@ import shutil
 
 if __name__ == '__main__':
     html_list = ""
-
     for file in os.popen("git diff-index --cached --name-only HEAD").read().splitlines():
         if not file.endswith("README.md") and file.endswith(".md"):
             html_file = f"{file}.html"
