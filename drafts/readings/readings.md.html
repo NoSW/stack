@@ -1,8 +1,4 @@
-# readings
-
-Some messy development reading list written in Chinese
-
-## 开源仓库系列
+# 开源仓库系列
 - [volk](https://github.com/zeux/volk), **a meta loader for Vulkan API**, 始于2018.3，作者是有15年经验的3A游戏程序，维护ing，MIT License。已经被内置到Vulkan 1.3 SDK，直接include就行。用C语言对Vulkan SDK的函数指针加载进行了个封装，能够一次性加载所有的可获取的Vulkan接口，也可以定制化地优化device calls的调用（还没搞，不懂），支持static/dynamic， 支持多平台。
 - [VulkanMemoryAllocator](https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator), **a memory allocation library for Vulkan API**, 始于2017.6，是GPUOpen Libraries & SDKs开发的，维护ing，MIT License。也被内置到Vulkan 1.3 SDK目录下了
 - [The-Forge](https://github.com/ConfettiFX/The-Forge), **a cross-platform rendering framework**. 始于2017.10，作者是ConfettiFX公司（加州的一个主攻rendering，提供图形引擎中间件的公司，开源代表作有The-Forge，GI中间件，Skydome中间件）的老板， Apache License 2.0。很多可以直接跑的examples，各个平台的图形API用法都有。
@@ -10,7 +6,7 @@ Some messy development reading list written in Chinese
 - [mimalloc](https://github.com/microsoft/mimalloc),  a general purpose allocator with excellent performance characteristics. 始于什么时间不重要，微软官方出品，还有配套论文，多平台维护ing，MIT License。malloc/free的替代品。README也有和各大同类流行库个benchmark对比。源码里很多内存分配的技术概念可以学习，不想看也可以clone下来直接用。
 - [nativefiledialog](https://github.com/mlabbe/nativefiledialog) a tiny, neat C library that portably invokes native file open, folder select and save dialogs. 始于2017.11，作者是Frogtoss Games公司的，zlib License。多个OS的FileDialog实现，但是内部直接用的malloc/free效率不行，需要重写。另外有个[fork](https://github.com/aarcangeli/nativefiledialog-cmake)为其添加了CMake配置，方便很多。
 
-## 正在读系列
+# 正在读系列
 
 - [ ] [Thriving in a Crowded and Changing World: C++ 2006–2020](https://dl.acm.org/doi/pdf/10.1145/3386320), 写于2020，作者是C++创始人兼标准委员会，讲述了C++标准发展到2020年的过程中，各个标准的重大更新，以及设计考量，keyword的设计渊源，很有意思，另外重点介绍了C++17，20的一些新标准，还可以了解到C++标准委员会这个组织的运行机制，和C++23标准的发展趋势
 
@@ -21,20 +17,12 @@ Some messy development reading list written in Chinese
 -  [ ] [filement pbr](https://google.github.io/filament/Filament.html#materialsystem/standardmodel), 写于2018.8 ，持续更新，google开源项目的材质说明文档，可以学到材质的基础的概念和PBR的基础算法，排版审美好，以后可以拿来抄这个html的模板
 
 
-## 不可能读完系列
+# 不可能读完系列
 
 - [Software optimization resources](https://www.agner.org/optimize/)，丹麦技术大学一个专注于提升软件性能的研究员写的5篇（~200页每篇）性能优化系列，其中只有篇1面向SDE，其他篇过于底层了。学习64bit和32bit系统的异同点，各类高级编程语言（interpreted, intermediate  code and just-in-time compiled, fully compiled）的异同优缺点以及技术选型指导，各类c++编译器的优缺点
 - [高速上手C++11/14/17/20](https://changkun.de/modern-cpp/zh-cn/00-preface/) 写于2020， 作者是CS phD, 开发者个人经验总结
 
 
-
-## 书籍系列
-
-要一边翻译一边阅读！
-
-
-
-* Github：建立自己技术栈的学习库（学习了什么，输出article、video、project）
-* Github：Game Engine
+# 书籍系列
 
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script><!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>

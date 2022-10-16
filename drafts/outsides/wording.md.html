@@ -1,5 +1,3 @@
-# wording
-
 Some native English wording in technical writing.
 
 - intra-batch, inter-batch 间的
