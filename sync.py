@@ -15,4 +15,3 @@ if __name__ == '__main__':
 
     if len(html_list) > 0:
         os.system(f"git add {html_list}")
-        os.system("git commit -m \"sync html\"")
