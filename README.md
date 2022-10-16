@@ -1,2 +1,2 @@
 # stack
-a collection of technical articles
+a collection of learning notes
