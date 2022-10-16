@@ -36,7 +36,7 @@ The *fragment processor* is a programmable unit that **operates on fragment valu
 
 A fragment shader **cannot change a fragment’s (\*x\*, \*y\*) position**. **Access to neighboring fragments is not allowed.** The values computed by the fragment shader are ultimately used to update framebuffer memory or texture memory, depending on the current API state and the API command that caused the fragments to be generated.
 
-### CS
+## CS
 
 The *compute processor* is a programmable unit that **operates independently from the other shader processors.** SHADER_NAME(compute)
 
