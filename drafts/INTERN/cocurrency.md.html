@@ -1,0 +1,40 @@
+并行架构
+
+* bit-level：32位，64位
+* instruction-level：流水线、乱序执行、猜测执行等看起来是串行的
+* data-level：也就是SIMD，可以在大量数据上执行同一操作。GPU就是数据并行处理器
+* task-level：
+  * 共享内存
+  * 分布式内存：每个处理器都有自己的内存，通过网络来通信
+
+
+
+响应好、容错率高
+
+### **线程与锁**
+
+逻辑上顺序执行的代码也可能被编译器的静态优化给打乱、或者硬件的乱序执行。
+
+解决锁的带来的死锁问题：
+
+* 全局加锁顺序：可以通过对象的散列值作为锁的全局顺序。但存在小概率的哈希冲突
+
+### **函数式编程（functional programing）**
+
+### Clojure
+
+### actor
+
+### CSP 通信顺序模型
+
+### SIMD (GPU)
+
+### Lambda架构·
+
+#### 并行算法
+
+##### 并行排序
+
+* 归并
+* 快排
+<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script><!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>

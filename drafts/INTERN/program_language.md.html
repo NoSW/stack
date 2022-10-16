@@ -1,0 +1,128 @@
+## 继承与多态
+
+菱形继承难题
+
+>
+> ​	(1)如果在一个子类继承的多个父类中拥有相同名字的实例变量，子类在引用该变量时将产生歧义，无法判断应该使用哪个父类的变量。
+>
+>  (2)如果在一个子类继承的多个父类中拥有相同方法，子类中有没有覆盖该方法，那么调用该方法时将产生歧义，无法判断应该调用哪个父类的方法。
+>
+> 
+
+### **解决方案1：interface (Java, Go)**
+
+* 在接口中不能有实例变量，只能有静态的常量，不能有具体的方法（包含方法体），只能有抽象方法，因此也就摒弃了多继承的缺点。 
+* 对于一个类实现多个接口的情况，因为接口只有抽象方法，具体方法只能由实现接口的类实现，在调用的时候始终只会调用实现类的方法（不存在歧义），因此不存在 继承的第二个缺点；
+* 而又因为接口只有静态的常量，但是由于静态变量是在编译期决定调用关系的，即使存在一定的冲突也会在编译时提示出错；而引用静态变量一般直接使用类名或接口名，从而避免产生歧义，因此也不存在多继承的第一个缺点。 对于一个接口继承多个父接口的情况也一样不存在这些缺点。
+
+### **解决方案2：MRO (Python)**
+
+采用`super`关键词来指代父类，可维护性高
+
+* **解决多继承的重复调用问题**
+  * 通过`super(class-name, self).func()`，可以避免对祖先类的成员函数的重复调用
+* **解决查找查找顺序问题**（MRO, Method Resolution Order）
+  * 定义：python为每个类生成一个tuple类型的数据`__mro__`，当用super调用父类方法时，会按照`__mro__`属性中的元素顺序挨个查找方法。一般结构是
+  * 一般结构是：`(<clasws '__main__.current-class'>, <class '__main__.father-calss1'>， <class '__main__.father-class2'>, ..., <class ‘__main__'.ancestor-class>, ...)`
+  * 采用的算法：c3。对继承树进行拓扑排序，左侧优先(先定义者先放在左侧)
+
+* **使用方法**（三种格式）
+  * **`super()`**
+    * 只能用在类内部
+    * 自动填充为`super(__class__, self)`
+  * **`super(type, obj).func()`**
+    * 从`obj`的`__mro__`中查找到`type`的下一个父类，调用这个类的`func()`
+  * **`super(type_1, type_2)`**
+    * `type_2`必须是`type_1`的子类
+    * 从`type_2`的`__mro__`中查找到`type_1`的下一个父类，返回这个类的类代理（没有实例，不能直接调用实例函数）
+      * `super(A, A).func()`，ERROR
+      * `super(A, A).func(A())`，OK
+      * 所以，这种情况下最好调用的是静态方法和类方法。
+* **Note**
+  * super 的第一个参数尽量为当前的类
+
+### **解决方案3：virtual inheritance（c++）**
+
+#### 多继承的内存分布
+
+```c++
+class A {};
+
+class B {};
+
+class C : public A, public B {};
+
+C aObject;
+A* pA = &aObject;
+B* pB = &aObject;
+C* pC = &aObject;
+// pA == pC, pB != pC
+```
+
+![这里写图片描述](http://uploadfiles.nowcoder.com/images/20160403/708096_1459644020223_D47CB88F816DAEC8E8FD1CC3BA4A0462)
+
+#### 虚继承
+
+```
+class A {
+	public :	int dataA;
+};
+
+class B : vitual public A {
+	public :	int dataB;
+};
+
+class C : virtual public A {
+	public :	int dataC;
+};
+
+class D : public B, public C {
+	public :	int dataD;
+};
+```
+
+![img](https://img-blog.csdn.net/20150827160607073)
+
+### **解决方案4：inner class (Java，c++)**
+
+
+
+* 成员内部类
+  * 可访问外部类的所有变量和方法（private和public都可）
+  * 需要实例化外部类，从而实例化
+  * 不能有静态变量
+  * `sizeof(外部类)=外部类c++`
+* 静态内部类
+  * 只能访问外部类的static变量和方法
+  * 不依赖于实例化
+* 局部内部类
+* 匿名内部类
+
+Note：
+
+* c++中实现一个不能被继承的类C，可以把C定义在一个类A的内部，并声明为private
+
+## **泛型**
+
+
+
+
+
+
+
+## 多线程
+
+### c++ 的 pthread
+
+### python 的 thread
+
+### go 的 go 块、channel
+
+### java 的 synchronized 关键字
+
+
+
+# 问题
+
+国内做不出商业引擎的难点在哪？ 技术和非技术角度？
+<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script><!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>

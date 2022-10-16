@@ -1,0 +1,117 @@
+计时器 Timer
+
+* 继承TimerTask类，并重写run方法（定义了timeout之后的操作）
+* 使用Timer.schedule()设置定时器
+
+
+
+多线程实现
+
+* 继承Thread类，或者实现Runnable接口
+* 要重写run()
+
+
+
+互斥实现
+
+* synchronized关键字，保证只有一个线程在执行这个方法/块
+* volatile变量，强制缓存更新
+* 单例模式在加锁前，检验是否为空（双重检验以提高效率）
+* 单例模式中不调用getInstance不会 new Log()
+* wait/notify机制
+* 了解polling/callback/listener
+
+
+
+this关键字
+
+* 返回自身的引用
+* 在构造方法中调用另一个构造方法，this(para list) ，必须放在构造函数的第一行，只能调用一次
+* 内部类访问外部类的引用 ClassExternal.this
+
+
+
+编译工具
+
+* 编译 javac xxx.java
+* 打包 jar cvf xxx.jar xxx.class
+* 运行 java xxx 或 java -cp xxx.jar xxx
+* jar是class文件的压缩包，基于zip
+* cp是class path的缩写
+
+
+
+容器类
+
+
+
+重载
+
+方法名字相同，参数列表不同，返回值同或不同
+
+
+
+java的继承
+
+* 不可继承多个父类，避免钻石问题，但可多次继承
+* fianl表示不可继承的类，不可重写的方法
+* 里氏替换法则：派生类（子类）对象能够替换其基类（父类）对象被使用
+* abstract类不能被实例化，
+
+Q: 子类的static方法只能访问父类static方法和变量？
+
+super(参数)显式调用父类的构造函数：位置？
+
+声明为abstract的方法，子类必须实现，除非？
+
+Java抽象类可以有构造函数吗？
+Java抽象类可以是final的吗？
+Java抽象类可以有static方法吗？
+Java抽象类必须有抽象方法吗？
+Java抽象类中可以包含程序入口的main方法吗？
+抽象类之间可以有继承关系吗？
+
+
+
+内部类
+
+应用例子：向文件系统写Log的类、只用一次的类，明确的从属关系，访问私有数据的但没必要公开的类
+
+四类：
+
+* 普通内部
+* 静态内部
+* 局部内部
+* 匿名内部
+
+子类、父类、内部类构造函数的执行顺序？
+
+
+
+
+
+class类的构造函数的私有的。
+
+
+
+多态特性：
+
+如果捕捉到子类的异常会进入父类的catch。因此父类的catch永远不能在子类的catch前面，否则报错
+
+1、finally中的代码总会被执行。
+
+2、当try、catch中有return时，也会执行finally。return的时候，要注意返回值的类型，是否受到finally中代码的影响。
+
+3、finally中有return时，会直接在finally中退出，导致try、catch中的return失效。
+
+System.exit(0);将停止当前线程和所有其他当场死亡的线程。finally块并不能让已经停止的线程继续执行。
+
+
+
+
+
+**GC**
+
+* 
+* 
+<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script><!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
