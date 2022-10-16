@@ -1,3 +1,3 @@
 # outsides
 
-tips of  software engineering outside of technology
+tips of  software engineering outside of technology.
