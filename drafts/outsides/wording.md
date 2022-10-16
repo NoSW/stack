@@ -205,3 +205,10 @@ And yet 可是，然而
 42. delve 钻研；探究；挖
 
 43. alleviate 减轻，缓和
+
+---
+
+- point (.), plus (+), dash (-), slash (/), asterisk (*), percent (%), 
+- angled brackets (< and >), square brackets ([ and ]), parentheses (( and )), braces ({ and })
+- caret (^), vertical bar (|), ampersand (&), tilde (~), equals (=), exclamation point (!)
+- colon (:), semicolon (;), comma (,), and question mark (?)， backslash(\\)

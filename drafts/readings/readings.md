@@ -1,7 +1,3 @@
-# readings
-
-Some messy development reading list written in Chinese
-
 ## 开源仓库系列
 - [volk](https://github.com/zeux/volk), **a meta loader for Vulkan API**, 始于2018.3，作者是有15年经验的3A游戏程序，维护ing，MIT License。已经被内置到Vulkan 1.3 SDK，直接include就行。用C语言对Vulkan SDK的函数指针加载进行了个封装，能够一次性加载所有的可获取的Vulkan接口，也可以定制化地优化device calls的调用（还没搞，不懂），支持static/dynamic， 支持多平台。
 - [VulkanMemoryAllocator](https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator), **a memory allocation library for Vulkan API**, 始于2017.6，是GPUOpen Libraries & SDKs开发的，维护ing，MIT License。也被内置到Vulkan 1.3 SDK目录下了
@@ -27,12 +23,4 @@ Some messy development reading list written in Chinese
 - [高速上手C++11/14/17/20](https://changkun.de/modern-cpp/zh-cn/00-preface/) 写于2020， 作者是CS phD, 开发者个人经验总结
 
 
-
 ## 书籍系列
-
-要一边翻译一边阅读！
-
-
-
-* Github：建立自己技术栈的学习库（学习了什么，输出article、video、project）
-* Github：Game Engine
