@@ -1,2 +1,2 @@
 # stack
-a collection of learning notes
+a collection of learning notes.
